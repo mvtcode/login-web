@@ -16,8 +16,7 @@
 
 			var txtToken = $('#txtToken');
 			var hash = window.location.hash.replace('#','');
-			txtToken.split(/\&/g);
-			txtToken.val(txtToken.split(/\&/g).join('\n'));
+			txtToken.val(hash.split(/\&/g).join('\n'));
 		});
 	</script>
 </head>
