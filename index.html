@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Auth login example - Tanmv</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$('#bt_google').click(function(){
+				window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&amp;state=admin-login&amp;redirect_uri=http%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&amp;response_type=token&amp;client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
+			});
+
+			$('#bt_facebook').click(function(){
+				alert('Chờ nhá!');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<h2>Đăng nhập Google</h2>
+	<button id="bt_google" type="button" class="btn btn-primary btn-block">Đăng nhập Google</button>
+	
+	<h2>Đăng nhập Facebook</h2>
+  <button id="bt_facebook" type="button" class="btn btn-primary btn-block">Đăng nhập Facebook</button>
+</div>
+
+</body>
+</html>
