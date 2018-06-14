@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Auth login example - Tanmv</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$('#bt_google').click(function(){
+				// window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=admin-login&redirect_uri=http%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&response_type=token&client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
+				window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=admin-login&redirect_uri=http%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&response_type=token&client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
+			});
+
+			var txtToken = $('#txtToken');
+			var hash = window.location.hash.replace('#','');
+			txtToken.split(/\&/g);
+			txtToken.val(txtToken.split(/\&/g).join('\n'));
+		});
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<h2>Token Google:</h2>
+	<div class="form-group">
+		<label for="txtToken">Token:</label>
+		<textarea class="form-control" rows="5" id="txtToken" disabled></textarea>
+	</div>
+	<button id="bt_google" type="button" class="btn btn-primary btn-block">Đăng nhập với tài khoản khác</button>
+</div>
+
+</body>
+</html>
