@@ -16,7 +16,8 @@
 			var txtToken = $('#txtToken');
 			var hash = window.location.hash.replace('#','');
 			txtToken.val(hash.split(/\&/g).join('\n'));
-			var token = hash.split(/\&/g).forEach(_s => {
+			var token;
+			hash.split(/\&/g).forEach(_s => {
 				var arr = _s.split('=');
 				if(arr[0] === 'access_token') {
 					token = arr[1];
