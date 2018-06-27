@@ -24,7 +24,7 @@
 				}
 			});
 			if(token) {
-				$.get('https://graph.facebook.com/me?access_token=' + token, function(data){
+				$.get('https://graph.facebook.com/me?fields=id,first_name,last_name,middle_name,name,name_format,picture,short_name,email&access_token=' + token, function(data){
 					$('#txtInfo').val(JSON.stringify(data));
 				});
 			}
