@@ -11,11 +11,11 @@
 		$(function(){
 			$('#bt_google').click(function(){
 				// window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=admin-login&redirect_uri=http%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&response_type=token&client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
-				window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=admin-login&redirect_uri=http%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&response_type=token&client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
+				window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=admin-login&redirect_uri=https%3A%2F%2Flogin.hpstar.net%2Fgoogle-callback.html&response_type=token&client_id=248544704868-1reger90f4naheh7nquh6p31etq7nfs7.apps.googleusercontent.com';
 			});
 
 			$('#bt_facebook').click(function(){
-				alert('Chờ nhá!');
+				window.location.href = 'https://www.facebook.com/v3.0/dialog/oauth?client_id=481378955611591&redirect_uri=https://login.hpstar.net/facebook-callback.html&state={"{auth=tanmv}"}&response_type=token&scope=email';
 			});
 		});
 	</script>

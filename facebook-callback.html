@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Auth login example - Tanmv</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$('#bt_facebook').click(function(){
+				window.location.href = 'https://www.facebook.com/v3.0/dialog/oauth?client_id=481378955611591&redirect_uri=https://login.hpstar.net/facebook-callback.html&state={"{auth=tanmv}"}&response_type=token&scope=email';
+			});
+
+			var txtToken = $('#txtToken');
+			var hash = window.location.hash.replace('#','');
+			txtToken.val(hash.split(/\&/g).join('\n'));
+			var token;
+			hash.split(/\&/g).forEach(_s => {
+				var arr = _s.split('=');
+				if(arr[0] === 'access_token') {
+					token = arr[1];
+				}
+			});
+			if(token) {
+				$.get('https://graph.facebook.com/me?access_token=' + token, function(data){
+					$('#txtInfo').val(JSON.stringify(data));
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<h2>Facebook Login:</h2>
+	<div class="form-group">
+		<label for="txtToken">Token:</label>
+		<textarea class="form-control" rows="5" id="txtToken" disabled></textarea>
+
+		<label for="txtToken">User:</label>
+		<textarea class="form-control" rows="5" id="txtInfo" disabled></textarea>
+	</div>
+	<button id="bt_facebook" type="button" class="btn btn-primary btn-block">Đăng nhập với tài khoản khác</button>
+</div>
+
+</body>
+</html>
